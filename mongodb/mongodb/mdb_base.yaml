@@ -3,29 +3,29 @@ services:
   mongodb_service:
     image: mongo:latest
     labels:
-      - "com.docker.examples.mongodb.role=mongod"
+      - "mongodb.role=mongod"
 
   mongodb_service_replset_1:
     image: mongo:latest
     labels:
-      - "com.docker.examples.mongodb.role=mongod"
-      - "com.docker.examples.mongodb.mongod.replset=rs1"
+      - "mongodb.role=mongod"
+      - "mongodb.mongod.replset=rs1"
     command: --replSet rs1  --oplogSize 10
 
   mongodb_service_replset_2:
     image: mongo:latest
     labels:
-      - "com.docker.examples.mongodb.role=mongod"
-      - "com.docker.examples.mongodb.mongod.replset=rs2"
+      - "mongodb.role=mongod"
+      - "mongodb.mongod.replset=rs2"
     command: --replSet rs2 --oplogSize 10
 
   mongodb_config_service:
     image: mongo:latest
     command: --port 27017 --configsvr --dbpath /data/db
     labels:
-      - "com.docker.examples.mongodb.role=mongoc"
+      - "mongodb.role=mongoc"
 
   mongodb_switch_service:
     image: alvinr/mongos
     labels:
-      - "com.docker.examples.mongodb.role=mongos"    
+      - "mongodb.role=mongos"    
