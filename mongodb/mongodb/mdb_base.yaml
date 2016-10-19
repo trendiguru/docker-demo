@@ -26,6 +26,6 @@ services:
       - "mongodb.role=mongoc"
 
   mongodb_switch_service:
-    image: alvinr/mongos
+    image: mongo:$MONGO_VERSION
     labels:
       - "mongodb.role=mongos"    
