@@ -2,7 +2,7 @@ mongodb:
    extends:
      file: mdb_base.yaml
      service: mongodb_switch_service
-   command: --configdb mongodb_config1_1:27017,mongodb_config2_1:27017,mongodb_config3_1:27017
+   command: mongos --configdb mongodb_config1_1:27017,mongodb_config2_1:27017,mongodb_config3_1:27017
    environment:
      - "constraint:node==${MACHINE0}"     
 rs1a:
