@@ -1,31 +1,31 @@
 version: "2"
 services:
   mongodb_service:
-    image: mongo:$MONGO_VERSION
+    image: mongo:${MONGO_VERSION}
     labels:
       - "mongodb.role=mongod"
 
   mongodb_service_replset_1:
-    image: mongo:$MONGO_VERSION
+    image: mongo:${MONGO_VERSION}
     labels:
       - "mongodb.role=mongod"
       - "mongodb.mongod.replset=rs1"
     command: --replSet rs1  --oplogSize 10
 
   mongodb_service_replset_2:
-    image: mongo:$MONGO_VERSION
+    image: mongo:${MONGO_VERSION}
     labels:
       - "mongodb.role=mongod"
       - "mongodb.mongod.replset=rs2"
     command: --replSet rs2 --oplogSize 10
 
   mongodb_config_service:
-    image: mongo:$MONGO_VERSION
+    image: mongo:${MONGO_VERSION}
     command: --port 27017 --configsvr --dbpath /data/db
     labels:
       - "mongodb.role=mongoc"
 
   mongodb_switch_service:
-    image: mongo:$MONGO_VERSION
+    image: mongo:${MONGO_VERSION}
     labels:
       - "mongodb.role=mongos"    
