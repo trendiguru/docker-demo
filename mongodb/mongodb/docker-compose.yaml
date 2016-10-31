@@ -91,4 +91,4 @@ services:
 networks:
   default:
     external:
-      name: mongo_net
+      name: mongonet
