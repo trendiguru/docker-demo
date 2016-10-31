@@ -68,7 +68,7 @@ services:
      volumes: 
        - /data/db/config1:/data/db
      environment:
-        - "constraint:node==${MACHINE2}"
+        - "constraint:node==${MACHINE7}"
 
    config2:
      extends:
@@ -77,7 +77,7 @@ services:
      volumes: 
        - /data/db/config2:/data/db
      environment:
-       - "constraint:node==${MACHINE6}"
+       - "constraint:node==${MACHINE8}"
 
    config3:
      extends:
@@ -86,7 +86,7 @@ services:
      volumes: 
        - /data/db/config3:/data/db
      environment:
-       - "constraint:node==${MACHINE5}"
+       - "constraint:node==${MACHINE9}"
 
 networks:
   default:
