@@ -68,7 +68,7 @@ services:
      volumes: 
        - /data/db/config1:/data/db
      environment:
-        - "constraint:node==${MACHINE1}"
+        - "constraint:node==${MACHINE2}"
 
    config2:
      extends:
