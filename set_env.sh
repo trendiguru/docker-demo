@@ -9,3 +9,5 @@ do
     echo "$machine"=$agent >> .env
     (( i += 1 ))
 done
+
+echo MONGO_VERSION=3.2.10 >> .env
