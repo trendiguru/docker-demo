@@ -87,3 +87,8 @@ services:
        - /data/db/config3:/data/db
      environment:
         - "affinity:mongodb.role!=mongoc"
+
+networks:
+  default:
+    external:
+      name: mongo_net
